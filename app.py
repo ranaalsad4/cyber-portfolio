@@ -540,7 +540,7 @@ elif page == "Cyber Forensics":
     st.subheader("Digital Evidence • Investigation • Integrity Verification")
 
     base_path = "Projects/Cyber Forensics"
-    image_path = "Projects/Cyber Forensics/images"
+    full_path = img_file
 
     selected_project = st.radio(
         "Select a project",
@@ -784,7 +784,7 @@ elif page == "IT Auditing":
     st.subheader("Governance • Risk Assessment • Controls • Business Continuity")
 
     base_path = "Projects/Information Technology Auditing"
-    image_path = "Projects/Information Technology Auditing/images"
+    full_path = img_file
 
     selected_audit_project = st.radio(
         "Select an IT Auditing project",
@@ -1082,7 +1082,7 @@ elif page == "Vulnerability Analysis":
     st.subheader("Penetration Testing • Reconnaissance • Password Security • Phishing Assessment")
 
     base_path = "Projects/Vulnerability Analysis and Control"
-    image_path = "Projects/Vulnerability Analysis and Control/Image_VA"
+    full_path = img_file
 
     selected_project = st.radio(
         "Select a project",
@@ -1636,7 +1636,7 @@ elif page == "MIS Project":
     st.subheader("Network Security • Password Cracking • SQL Injection • Ethical Security Practice")
 
     base_path = "Projects/This project was designed and developed by me"
-    image_path = "Projects/This project was designed and developed by me/images"
+    full_path = img_file
 
     st.markdown("""
 ## Project Overview
