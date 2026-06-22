@@ -540,7 +540,7 @@ elif page == "Cyber Forensics":
     st.subheader("Digital Evidence • Investigation • Integrity Verification")
 
     base_path = "Projects/Cyber Forensics"
-    full_path = img_file
+    image_path = "Projects/Cyber Forensics/images"
 
     selected_project = st.radio(
         "Select a project",
@@ -574,7 +574,7 @@ elif page == "Cyber Forensics":
 
             with col1:
                 img_file, caption = images[i]
-                full_path = os.path.join(image_path, img_file)
+                full_path = img_file
                 if os.path.exists(full_path):
                     st.image(full_path, caption=caption, use_container_width=True)
                 else:
@@ -784,7 +784,7 @@ elif page == "IT Auditing":
     st.subheader("Governance • Risk Assessment • Controls • Business Continuity")
 
     base_path = "Projects/Information Technology Auditing"
-    full_path = img_file
+    image_path = "Projects/Information Technology Auditing/images"
 
     selected_audit_project = st.radio(
         "Select an IT Auditing project",
@@ -816,7 +816,7 @@ elif page == "IT Auditing":
 
             with col1:
                 img_file, caption = images[i]
-                full_path = os.path.join(image_path, img_file)
+                full_path = img_file
                 if os.path.exists(full_path):
                     st.image(full_path, caption=caption, use_container_width=True)
 
@@ -1082,7 +1082,7 @@ elif page == "Vulnerability Analysis":
     st.subheader("Penetration Testing • Reconnaissance • Password Security • Phishing Assessment")
 
     base_path = "Projects/Vulnerability Analysis and Control"
-    full_path = img_file
+    image_path = "Projects/Vulnerability Analysis and Control/Image_VA"
 
     selected_project = st.radio(
         "Select a project",
@@ -1636,7 +1636,7 @@ elif page == "MIS Project":
     st.subheader("Network Security • Password Cracking • SQL Injection • Ethical Security Practice")
 
     base_path = "Projects/This project was designed and developed by me"
-    full_path = img_file
+    image_path = "Projects/This project was designed and developed by me/images"
 
     st.markdown("""
 ## Project Overview
@@ -2149,6 +2149,3 @@ Feel free to reach out for professional opportunities, collaborations, or cybers
 
 </div>
 """, unsafe_allow_html=True)
-
-
-
