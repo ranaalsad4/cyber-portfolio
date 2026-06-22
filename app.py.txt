@@ -1,0 +1,108 @@
+import streamlit as st
+import os
+
+st.set_page_config(
+    page_title="Cybersecurity Portfolio",
+    page_icon="🛡️",
+    layout="wide"
+)
+
+st.title("Alaa Al Saad")
+st.subheader("Cyber Forensics & Security Portfolio")
+
+st.write("""
+Welcome to my cybersecurity portfolio. This portfolio presents my academic and practical projects 
+in cyber forensics, IT auditing, vulnerability analysis, penetration testing, and security research.
+""")
+
+# Resume Section
+st.header("📌 Resume")
+
+resume_path = "Alaa Al Saad_Cyber Forensics & Security_Resume.pdf"
+
+if os.path.exists(resume_path):
+    with open(resume_path, "rb") as file:
+        st.download_button(
+            label="Download My Resume",
+            data=file,
+            file_name="Alaa Al Saad_Cyber Forensics & Security_Resume.pdf",
+            mime="application/pdf"
+        )
+else:
+    st.warning("Resume file not found. Please make sure the PDF is in the same folder as app.py.")
+
+# Skills Section
+st.header("🛠️ Core Cybersecurity Skills")
+
+st.write("""
+- Digital Forensics  
+- Cyber Forensics Investigation  
+- Vulnerability Assessment  
+- Penetration Testing  
+- IT Auditing  
+- Risk Assessment  
+- Security Compliance  
+- Incident Response  
+- Phishing Analysis  
+- Password Cracking & Hash Analysis  
+- Security Documentation  
+""")
+
+# Project folders
+project_folders = {
+    "Cyber Forensics": "projects/Cyber_Forensics",
+    "Information Technology Auditing": "projects/Information_Technology_Auditing",
+    "Vulnerability Analysis and Control": "projects/Vulnerability_Analysis_and_Control",
+    "MIS Project": "projects/MIS_Project"
+}
+
+st.header("📂 Cybersecurity Projects")
+
+for project_name, folder_path in project_folders.items():
+    st.subheader(project_name)
+
+    if os.path.exists(folder_path):
+        files = os.listdir(folder_path)
+
+        if files:
+            for file_name in files:
+                file_path = os.path.join(folder_path, file_name)
+
+                with st.expander(file_name):
+                    st.write("This file is part of my cybersecurity academic and practical project work.")
+
+                    with open(file_path, "rb") as file:
+                        st.download_button(
+                            label=f"Download {file_name}",
+                            data=file,
+                            file_name=file_name,
+                            key=file_path
+                        )
+        else:
+            st.info("No files added yet.")
+    else:
+        st.warning(f"Folder not found: {folder_path}")
+
+# Project Descriptions
+st.header("🔍 Project Highlights")
+
+st.markdown("""
+### Cyber Forensics
+Projects focused on digital evidence collection, forensic investigation, case analysis, and report writing.
+
+### Information Technology Auditing
+Projects covering IT controls, audit findings, risk assessment, compliance gaps, and security recommendations.
+
+### Vulnerability Analysis and Control
+Projects covering penetration testing, phishing attack analysis, password cracking, vulnerability identification, and remediation.
+
+### MIS Project
+A systems-related project demonstrating documentation, analysis, and structured project specification.
+""")
+
+# Contact Section
+st.header("📬 Contact")
+
+st.write("""
+For professional opportunities, cybersecurity roles, or collaboration, please contact me through email or LinkedIn.
+""")
